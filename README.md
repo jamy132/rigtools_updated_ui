@@ -18,7 +18,7 @@ $ npm start
 - Then click on the gray box twice
 
 ## Hartools
-[CrossJibly](https://github.com/crossjbly/)], and a few friends had figured out how to sitll perform rigtools post rigtools patch in 129, rigtools through the execution of http archive files, aka `.har` files. 
+[crossjbly](https://github.com/crossjbly/)], and a few friends had figured out how to still use rigtools post-rigtools patch on 129 through the use of http archive files, aka `.har` files. 
 1. Download the latest `.har` file from the [releases page](https://github.com/t3m1n4l/rigtools-updated-ui/releases/latest/)
 2. Get the `.har` file onto the device you want to run the devtools XSS on
 3. On the device you want to run the devtools XSS on go to `devtools://devtools/bundled/inspector.html`
@@ -31,7 +31,7 @@ $ npm start
 > ^^^ if you are already on the network page you can skip this ^^^
 6. Click the little upload button and upload the downloaded `.har` file
 > ^^^ you may need to expand the sidebar to see it ^^^
-7. Double click on the text that appears in the box [DOUBLE CLICK]
+7. Double click on the text that appears in the box `[DOUBLE CLICK THIS]`
 
 ## Creating your own payloads
 1. Clone the Github Repository: `git clone https://github.com/t3m1n4l/rigtools-updated-ui`
