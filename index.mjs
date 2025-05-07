@@ -513,7 +513,7 @@ a:hover {
 <h3 id="requirements">Requirements:</h3>
 <ul>
     <li>A brain</li>
-    <li>A Chromebook on 128 or below (check via chrome://version)</li>
+    <li>A Chromebook on 128 or below (check via chrome://version), if you have any version less than 133 scroll down till you see hartools</li>
     <li>An internet connection</li>
     <li>A blocking extension</li>
 </ul>
@@ -539,6 +539,34 @@ a:hover {
 <p>After using the update button on rigtools, the newly updated file will always be located at <code>filesystem:chrome-extension://ext-id/persistent/rigtools.html</code>. Bookmark this page instead if you want to constantly get the latest updates and bug-fixes.</p>
 </blockquote>
 
+<hr>
+<h3 id="hartools">Rigtools on >133</h3>
+<p>
+<ol>
+<li>Download the latest <code>.har</code> file from the <a href="https://github.com/t3m1n4l/rigtools-updated-ui/releases/latest/">releases page</a></li>
+<li>Get the <code>.har</code> file onto the device you want to run the devtools XSS on</li>
+<li>On the device you want to run the devtools XSS on go to devtools://devtools/bundled/inspector.html</li>
+<blockquote>
+If <code>devtools://devtools/bundled/inspector.html</code> is blocked use the one of the follwoing links</p>
+<ul>
+<li><code>devtools://devtools/bundled/js_app.html</code></li>
+<li><code>devtools://devtools/bundled/devtools_app.html</code></li>
+<li><code>devtools://devtools/bundled/worker_app.html</code></li>
+</ul>
+</blockquote>
+</li>
+<li>Once it FULLY loads, add <code>?experiments=true</code> to the end of the URL and click enter. (ex. <code>devtools://devtools/bundled/inspector.html?expirements=true</code>)</li>
+<li>Go to the <code>Network</code> tab. If you can&#39;t find it there should be a button on the topbar that looks like this <code>&gt;&gt;</code> and a dropdown should open in which you can select <code>Network</code><blockquote>
+<p>^^^ if you are already on the network page you can skip this ^^^</p>
+</blockquote>
+</li>
+<li>Click the little upload button and upload the downloaded <code>.har</code> file<blockquote>
+<p>^^^ you may need to expand the sidebar to see it ^^^</p>
+</blockquote>
+</li>
+<li>Double click on the text that appears in the box [DOUBLE CLICK]</li>
+</ol>
+</p>
 <hr>
 <h3 id="repo">Repo:</h3>
 <p><a href="https://github.com/T3M1N4L/rigtools-updated-ui">https://github.com/T3M1N4L/rigtools-updated-ui</a> Based off of <a href="https://github.com/Miner49ur/rigtools">Miner49ur's fork of Rigtools</a></p>

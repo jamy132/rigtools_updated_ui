@@ -1,0 +1,46 @@
+name: Build and Release HAR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.js'
+      - 'entry/entry.html'
+      - 'payloads/**'
+      - 'autoxss.js'
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run HAR Build
+        run: npm run har-build
+
+      - name: Get HAR filename
+        id: get-har
+        run: |
+          HAR_FILE=$(ls *.har | sort | tail -n 1)
+          echo "har_file=${HAR_FILE}" >> $GITHUB_OUTPUT
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: auto-har
+          name: Auto HAR Release
+          files: ${{ steps.get-har.outputs.har_file }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

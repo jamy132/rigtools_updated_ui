@@ -2,6 +2,8 @@
 
 # <p align=center><code>Extension/Devtools code execution</code></p> 
 ## How to use
+
+> There are two ways you could use this. If your on <128 use the instructions, I will tell you what the second way is for users >133 later in this readme
 ```sh
 $ git clone https://github.com/T3M1N4L/rigtools-updated-ui 
 $ cd rigtools
@@ -15,6 +17,30 @@ $ npm start
 - Click on `Network`
 - Then click on the gray box twice
 
+## Hartools
+[CrossJibly](https://github.com/crossjbly/)], and a few friends had figured out how to sitll perform rigtools post rigtools patch in 129, rigtools through the execution of http archive files, aka `.har` files. 
+1. Download the latest `.har` file from the [releases page](https://github.com/t3m1n4l/rigtools-updated-ui/releases/latest/)
+2. Get the `.har` file onto the device you want to run the devtools XSS on
+3. On the device you want to run the devtools XSS on go to `devtools://devtools/bundled/inspector.html`
+> If `devtools://devtools/bundled/inspector.html` is blocked use the one of the follwoing links
+> * `devtools://devtools/bundled/js_app.html`
+> * `devtools://devtools/bundled/devtools_app.html`
+> * `devtools://devtools/bundled/worker_app.html`
+4. Once it FULLY loads, add `?experiments=true` to the end of the URL and click enter. (ex. `devtools://devtools/bundled/inspector.html?expirements=true`)
+5. Go to the `Network` tab. If you can't find it there should be a button on the topbar that looks like this `>>` and a dropdown should open in which you can select `Network`
+> ^^^ if you are already on the network page you can skip this ^^^
+6. Click the little upload button and upload the downloaded `.har` file
+> ^^^ you may need to expand the sidebar to see it ^^^
+7. Double click on the text that appears in the box [DOUBLE CLICK]
+
+## Creating your own payloads
+1. Clone the Github Repository: `git clone https://github.com/t3m1n4l/rigtools-updated-ui`
+2. Chande directory to `rigtools-updated-ui`: `cd rigtools-updated-ui`
+3. The payload files are located in the payloads folder edit those to your liking
+4. Install dependencies: `npm i`
+5. If you want to run the websocket server run `npm run start`
+6. If you want to package your code to the `.har` file run `npm run har-build`
+
 ## Terminology
 - Entry
   - Entrypoint (or main script) when running devtools xss.
@@ -25,9 +51,28 @@ $ npm start
   - Only modify the entrypoint when necessary. If not modified properly, thigns such as the updater will break, do not remove any buttons and reuse ids.
 
 ## Release information
+- Release 2.0.0
+  - This release contains the following things
+    - `.har` file exploit furthering the use of rigtools in newer chrome versions
+- Release 1.0.0
+  - This release contains the following things
+    - Better UI
+    - Multiple extension presets
+    - QoL features
 - Release 0.0.1
   - This release contains the following things:
     - Updater
     - Extension debugging
     - Devtools debugging
     - Chrome url debugging.
+
+## Credits
+  - unretained: Original rigtools developer tools code execution exploit (this literally wouldn't have been possible without rigtools lol)
+  - t3rm1n4l: Pioneering the new repo as well as improving ui and helping with QoL features 
+  - Fallden4: QoL Features
+  - Miner49ur: Main developer of the updated ui, later improved and maintained by t3rm1n4l
+  - kxtzownsu: skid notice, figuring out that gforms locked mode extension has management perms
+  - Crossjbly: Finding the vulnerability in .har files
+  - Blobby Boi: Helping with development of the payloads and UI
+  - axqmx: Testing and help with development
+  - HarryJarry1: Creating autoxss and with helping development

