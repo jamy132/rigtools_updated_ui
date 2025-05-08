@@ -42,5 +42,26 @@ jobs:
           tag_name: auto-har
           name: Auto HAR Release
           files: ${{ steps.get-har.outputs.har_file }}
+          body: |
+            ## Hartools
+
+            [crossjbly](https://github.com/crossjbly/), and a few friends had figured out how to still use rigtools post-rigtools patch on 129 through the use of HTTP archive files, aka `.har` files. 
+
+            ### Instructions:
+
+            1. **Download the latest `.har` file** from the [releases page](https://github.com/t3m1n4l/rigtools-updated-ui/releases/latest/)
+            2. **Get the `.har` file** onto the device you want to run the DevTools XSS on.
+            3. On the target device, go to:  
+               `devtools://devtools/bundled/inspector.html`  
+               > If blocked, try one of the following:  
+               > - `devtools://devtools/bundled/js_app.html`  
+               > - `devtools://devtools/bundled/devtools_app.html`  
+               > - `devtools://devtools/bundled/worker_app.html`  
+            4. Once fully loaded, append `?experiments=true` to the URL and press Enter.  
+               Example: `devtools://devtools/bundled/inspector.html?experiments=true`
+            5. Go to the **Network** tab. If it’s not visible, click `>>` on the topbar and select **Network**.
+            6. Click the upload icon 📤 and upload the `.har` file.  
+               > You may need to expand the sidebar to see the upload button.
+            7. **Double-click** the text that appears — `[DOUBLE CLICK THIS]` — to trigger the payload.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
