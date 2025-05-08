@@ -34,7 +34,7 @@ $ npm start
 7. Double click on the text that appears in the box `[DOUBLE CLICK THIS]`
 
 ## Creating your own payloads
-1. Clone the Github Repository: `git clone https://github.com/t3m1n4l/rigtools-updated-ui`
+1. Clone the GitHub Repository: `git clone https://github.com/t3m1n4l/rigtools-updated-ui`
 2. Change directory to `rigtools-updated-ui`: `cd rigtools-updated-ui`
 3. The payload files are located in the payloads folder, edit those to your liking
 4. Install dependencies: `npm i`
