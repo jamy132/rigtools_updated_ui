@@ -40,10 +40,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: auto-har
-          name: Auto HAR Release
+          name: Hartools
           files: ${{ steps.get-har.outputs.har_file }}
           body: |
-            # Hartools Instructions:
+            # Instructions:
 
             1. **Download the latest `.har` file** attached.
             2. **Get the `.har` file** onto the device you want to run the DevTools XSS on.
