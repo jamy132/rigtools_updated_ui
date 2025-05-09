@@ -30,11 +30,14 @@ jobs:
       - name: Run HAR Build
         run: npm run har-build
 
-      - name: Get HAR filename
+      - name: Rename HAR to unique filename
         id: get-har
         run: |
           HAR_FILE=$(ls *.har | sort | tail -n 1)
-          echo "har_file=${HAR_FILE}" >> $GITHUB_OUTPUT
+          TIMESTAMP=$(date +'%Y%m%d-%H%M%S')
+          NEW_NAME="har-${TIMESTAMP}.har"
+          mv "$HAR_FILE" "$NEW_NAME"
+          echo "har_file=$NEW_NAME" >> $GITHUB_OUTPUT
 
       - name: Generate tag name
         id: generate-tag
