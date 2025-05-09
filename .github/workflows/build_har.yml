@@ -51,7 +51,7 @@ jobs:
           body: |
             # Instructions:
 
-            1. **Download the latest `.har` file** attached.
+            1. **Download the latest [.har](https://github.com/T3M1N4L/rigtools-updated-ui/releases/latest/download/HARTOOLS.har) file** attached.
             2. **Get the `.har` file** onto the device you want to run the DevTools XSS on.
             3. On the target device, go to:  
                `devtools://devtools/bundled/inspector.html`  
