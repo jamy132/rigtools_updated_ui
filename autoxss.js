@@ -247,6 +247,10 @@
               }
 
           }
+          document.querySelector('#troll').onclick = function () { // tr3nch support yippie
+                let tr3nchpayload = atob(`tr3nchpayloadhere`);
+                eval(tr3nchpayload);
+            }
           document.querySelector('#extdbg').onclick = function () {
               dbgext(false);
           }

@@ -5,13 +5,14 @@ function readAndEncode(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
   return Buffer.from(content, 'utf-8').toString('base64');
 }
-
+const tr3nch_b64 = readAndEncode('devtools_payloads/tr3nch.js');
 const entry_b64 = readAndEncode('entry/entry.html');
 const index_html_b64 = readAndEncode('payloads/index.html');
 const index_js_b64 = readAndEncode('payloads/index.js');
 
 let autoxss_js = fs.readFileSync('autoxss.js', 'utf-8');
 
+autoxss_js = autoxss_js.replace('tr3nchpayloadhere', tr3nch_b64);
 autoxss_js = autoxss_js.replace('putentrycontentshere', entry_b64);
 autoxss_js = autoxss_js.replace('putindex.htmlcontentshere', index_html_b64);
 autoxss_js = autoxss_js.replace('putindex.jscontentshere', index_js_b64);
