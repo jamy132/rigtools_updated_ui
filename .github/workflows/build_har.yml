@@ -36,11 +36,17 @@ jobs:
           HAR_FILE=$(ls *.har | sort | tail -n 1)
           echo "har_file=${HAR_FILE}" >> $GITHUB_OUTPUT
 
+      - name: Generate tag name
+        id: generate-tag
+        run: |
+          TAG_NAME="$(date +'%_m|%-d|%y' | tr -d ' ')"
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: auto-har
-          name: Hartools
+          tag_name: ${{ steps.generate-tag.outputs.tag_name }}
+          name: Hartools - ${{ steps.generate-tag.outputs.tag_name }}
           files: ${{ steps.get-har.outputs.har_file }}
           body: |
             # Instructions:
