@@ -35,7 +35,7 @@ jobs:
         run: |
           HAR_FILE=$(ls *.har | sort | tail -n 1)
           TIMESTAMP=$(date +'%Y%m%d-%H%M%S')
-          NEW_NAME="har-${TIMESTAMP}.har"
+          NEW_NAME="hartools-${TIMESTAMP}.har"
           mv "$HAR_FILE" "$NEW_NAME"
           echo "har_file=$NEW_NAME" >> $GITHUB_OUTPUT
 
