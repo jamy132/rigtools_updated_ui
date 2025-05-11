@@ -540,7 +540,7 @@ a:hover {
 </blockquote>
 
 <hr>
-<h3 id="hartools">Rigtools on >133</h3>
+<h3 id="hartools">Rigtools on <133</h3>
 <p>
 <ol>
 <li>Download the latest <code>.har</code> file from the <a href="https://github.com/t3m1n4l/rigtools-updated-ui/releases/latest/">releases page</a></li>
@@ -569,7 +569,7 @@ If <code>devtools://devtools/bundled/inspector.html</code> is blocked use the on
 </p>
 <hr>
 <h3 id="repo">Repo:</h3>
-<p><a href="https://github.com/T3M1N4L/rigtools-updated-ui">https://github.com/T3M1N4L/rigtools-updated-ui</a> Based off of <a href="https://github.com/Miner49ur/rigtools">Miner49ur's fork of Rigtools</a></p>
+<p><a href="https://github.com/T3M1N4L/rigtools-updated-ui">https://github.com/T3M1N4L/rigtools-updated-ui</a> Based off of <a href="https://github.com/Miner49ur/rigtools">Miner49ur's fork of Rigtools</a>, Hartools by <a href="https://crossjbly.pages.dev/">crossjbly</a></p>
 
 <script>
 let currentUrl = window.location.hostname + window.location.pathname;
