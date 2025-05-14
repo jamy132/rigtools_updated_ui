@@ -9,6 +9,7 @@ on:
       - 'entry/entry.html'
       - 'payloads/**'
       - 'autoxss.js'
+      -  '.github/workflows/build_har.yml'
   workflow_dispatch:
 
 jobs:
