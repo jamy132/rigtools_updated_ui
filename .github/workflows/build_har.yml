@@ -68,5 +68,6 @@ jobs:
             6. Click the upload icon 📤 and upload the `.har` file.  
                > You may need to expand the sidebar to see the upload button.
             7. **Double-click** the text that appears — `[DOUBLE CLICK THIS]` — to trigger the payload.
+            note: the timestamp below is stored in gmt time.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
