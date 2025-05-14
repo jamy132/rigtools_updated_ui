@@ -209,16 +209,16 @@
 }
     </style>
     <script defer>
-        window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("DOMContentLoaded", () => {
+    const notification = document.getElementById("tiktok-notification");
     setTimeout(() => {
-      const notification = document.getElementById("tiktok-notification");
-      if (notification) {
-        notification.classList.add("show");
-
+      notification.classList.add("show");
+      setTimeout(() => {
+        notification.classList.remove("show");
         setTimeout(() => {
-          notification.classList.remove("show");
-        }, 8000);
-      }
+          notification.remove();
+        }, 500);
+      }, 8000);
     }, 500);
   });
       document.addEventListener("keydown", function(event) {
