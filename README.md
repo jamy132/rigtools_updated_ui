@@ -22,7 +22,7 @@ $ npm start
 1. Download the latest `.har` file from the [releases page](https://github.com/t3m1n4l/rigtools-updated-ui/releases/latest/)
 2. Get the `.har` file onto the device you want to run the devtools XSS on
 3. On the device you want to run the devtools XSS on go to `devtools://devtools/bundled/inspector.html`
-> If `devtools://devtools/bundled/inspector.html` is blocked use the one of the follwoing links
+> If `devtools://devtools/bundled/inspector.html` is blocked use the one of the following links
 > * `devtools://devtools/bundled/js_app.html`
 > * `devtools://devtools/bundled/devtools_app.html`
 > * `devtools://devtools/bundled/worker_app.html`
