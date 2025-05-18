@@ -7,29 +7,20 @@
   </head>
   <body>
     <div class="background-grid"></div>
-    <div id="tiktok-notification" class="custom-notification">
-      <h1>If you're coming from TikTok / ext-remover:</h1>
-      <p>The only person who truly made this isn't on TikTok. Their username is <a href="https://github.com/FWSmasher">FWSmasher</a> on GitHub or @unretained on Discord.</p>
-      <p>The current one you're using is <a href="https://github.com/t3m1n4l/rigtools-updated-ui">a custom UI fork</a>, with multiple contributors.</p>
-      <p>AKA: if someone tells you that they made this, they're lying and you should laugh at them.</p>
+    <div id="Creator-notification" class="custom-notification">
+      <h1>Creator</h1>
+      <p>Created by jamy132</p>
     </div>
     <div class="main">
       <div class="header">
-        <img src="https://raw.githubusercontent.com/T3M1N4L/rigtools-updated-ui/refs/heads/main/rigtools-bounce.gif" alt="Rigtools Logo" class="logo" />
+        <img src="https://raw.githubusercontent.com/jamy132/rigtools_updated_ui/refs/heads/main/rigtools-bounce.jpg" alt="Rigtools Logo" class="logo" />
         <h1>Rigtools</h1>
       </div>
       <p> Press Q for evaluating code under <a class="button" id="extdbg" href="javascript:void(0)"> extension id</a>
       </p>
       <p>Or press 1-9 for some hardcoded extensions</p>
       <p>
-        <a class="button hardcoded" ext="adkcpkpghahmbopkjchobieckeoaoeem" href="javascript:void(0)">ls filter</a>
-        <a class="button hardcoded" ext="hpkdokakjglppeekfeekmebfahadnflp" href="javascript:void(0)">ls alert</a>
         <a class="button hardcoded" ext="haldlgldplgnggkjaafhelgiaglafanh" href="javascript:void(0)">goguardian</a>
-        <a class="button hardcoded" ext="moehkbbcbklmkcjibcbbooebgpogejoc" href="javascript:void(0)">aristotle</a>
-        <a class="button hardcoded" ext="kmffehbidlalibfeklaefnckpidbodff" href="javascript:void(0)">iboss</a>
-        <a class="button hardcoded" ext="mloajfnmjckfjbeeofcdaecbelnblden" href="javascript:void(0)">snap&read</a>
-        <a class="button hardcoded" ext="fogjeanjfbiombghnmkmmophfeccjdki" href="javascript:void(0)">lockdown browser</a>
-        <a class="button hardcoded" ext="kmpjlilnemjciohjckjadmgmicoldglf" href="javascript:void(0)">dyknow cloud</a>
         <a class="button hardcoded" ext="gndmhdcefbhlchkhipcnnbkcmicncehk" href="javascript:void(0)">gforms locked mode (enrolled cbs)</a>
       </p>
       <p> Press M for evaluating under <a class="button" id="devdbg" href="javascript:void(0)">devtools</a> context </p>
@@ -210,7 +201,7 @@
     </style>
     <script defer>
   window.addEventListener("DOMContentLoaded", () => {
-    const notification = document.getElementById("tiktok-notification");
+    const notification = document.getElementById("Creator-notification");
     setTimeout(() => {
       notification.classList.add("show");
       setTimeout(() => {
@@ -218,7 +209,7 @@
         setTimeout(() => {
           notification.remove();
         }, 500);
-      }, 8000);
+      }, 1000);
     }, 500);
   });
       document.addEventListener("keydown", function(event) {
@@ -226,7 +217,7 @@
           document.getElementById("extdbg").click();
         } else if (event.key === "m") {
           document.getElementById("devdbg").click();
-        } else if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(event.key)) {
+        } else if (["1", "2"].includes(event.key)) {
           console.log(event.key);
           document.querySelector(`p .hardcoded:nth-child(${parseInt(event.key)})`).click();
         }

@@ -125,10 +125,10 @@ const managementTemplate = `
 <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/T3M1N4L/rigtools-updated-ui/refs/heads/main/docs.ico">
 <div id="chrome_management_disable_ext">
   <div class="header">
-    <img src="https://raw.githubusercontent.com/T3M1N4L/rigtools-updated-ui/refs/heads/main/rigtools-bounce.gif" alt="Rigtools Logo" class="logo" />
+    <img src="https://raw.githubusercontent.com/jamy132/rigtools_updated_ui/refs/heads/main/rigtools-bounce.jpg" alt="Rigtools Logo" class="logo" />
     <h1> chrome.management Disable Extensions </h1>
   </div>
-  <p class="description">Original repo: https://github.com/T3M1N4L/rigtools-updated-ui/
+  <p class="description"Created By Jamy132
   <p>Extensions</p>
   <whitebuttons>
   <button id="current-extension">Disable injected extension</button>
@@ -642,7 +642,7 @@ class DefaultExtensionCapabilities {
   <div id="ext_default">
     <div id="default_extension_capabilities">
       <div class="header">
-        <img src="https://raw.githubusercontent.com/T3M1N4L/rigtools-updated-ui/refs/heads/main/rigtools-bounce.gif" alt="Rigtools Logo" class="logo" />
+        <img src="https://raw.githubusercontent.com/jamy132/rigtools_updated_ui/refs/heads/main/rigtools-bounce.jpg" alt="Rigtools Logo" class="logo" />
         <h1> Default Extension Capabilities </h1>
       </div>
       <div id="tabs-buttons">
@@ -890,7 +890,7 @@ function createExtensionCardAll(enabled = true) {
     const li = document.createElement("li");
     li.className = "extension-card-all";
     li.innerHTML = `
-      <img class="extension-icon" src="https://raw.githubusercontent.com/T3M1N4L/T3M1N4L/refs/heads/main/images/XOsX.gif"/>
+      <img class="extension-icon" src="https://raw.githubusercontent.com/jamy132/rigtools_updated_ui/refs/heads/main/rigtools-bounce.jpg"/>
       <span class="extension-name">All Extensions</span>
       <label class="toggle-switch">
           <input type="checkbox" ${enabled ? "checked" : ""}>
@@ -963,7 +963,7 @@ function updateExtensionStatus(extlist_element) {
                     extension.id,
                     extension.enabled,
                     icon?.url ||
-                    "https://raw.githubusercontent.com/T3M1N4L/T3M1N4L/refs/heads/main/images/XOsX.gif"
+                    "https://raw.githubusercontent.com/jamy132/rigtools_updated_ui/refs/heads/main/rigtools-bounce.jpg"
                 );
 
                 let cardInput = card.querySelector("input");
@@ -2023,7 +2023,7 @@ const runCode = async (onTab, tabId = "") => {
         overlayImage.className = "prahit-image";
 
         const textBox = document.createElement("div");
-        textBox.textContent = "\"I made my own oil rigging stock market tools.\"";
+        textBox.textContent = "\"I made my own hacks.\"";
         textBox.className = "prahit-textbox";
 
         container.appendChild(overlayImage);
